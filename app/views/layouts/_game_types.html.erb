@@ -1,13 +1,11 @@
 <% @date = "" %>
-<% @games.each do |game| %>
+
+<% @game_type.games.each do |game| %>
   <% @time = game.created_at.in_time_zone("Eastern Time (US & Canada)") %>
   <% if @time.strftime("%m/%d/%Y") != @date %>
     <% @date = @time.strftime("%m/%d/%Y") %>
     <h2><%= @date %></h2>
   <% end %>
-  <div class="row-fluid">
-    <%= link_to game.game_type.name, game.game_type %>
-  </div>
   <div class="row-fluid">
     <table class="table table-striped table-bordered">
       <% game.players.each do |player|%>
