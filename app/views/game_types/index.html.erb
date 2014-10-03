@@ -1,22 +1,10 @@
 <h1>All Games</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @game_types.each do |game_type| %>
-  <tr>
-    <td><%= game_type.name %></td>
-    <td><%= link_to 'Show', game_type %></td>
-    <td><%= link_to 'Edit', edit_game_type_path(game_type) %></td>
-    <td><%= link_to 'Destroy', game_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="row">
+    <div class="span3"><%= link_to game_type.name, game_type %></td></div>
+  </div>
 <% end %>
-</table>
-
 <br />
 
 <%= link_to 'New Game type', new_game_type_path %>
