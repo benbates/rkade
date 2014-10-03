@@ -1,8 +1,10 @@
 <h1>All Games</h1>
 
-<% @game_types.each do |game_type| %>
+<% @game_types.in_groups_of(4).each do |game_type_group| %>
   <div class="row">
-    <div class="span3"><%= link_to game_type.name, game_type %></td></div>
+    <% game_type_group.each do |game_type| %>
+        <div class="span2"><%= link_to game_type.name, game_type %></td></div>
+    <% end %>
   </div>
 <% end %>
 <br />
