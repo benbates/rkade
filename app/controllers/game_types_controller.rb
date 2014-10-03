@@ -2,8 +2,7 @@ class GameTypesController < ApplicationController
   # GET /game_types
   # GET /game_types.json
   def index
-    @game_types = GameType.all
-
+    @game_types = GameType.order('name ASC')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @game_types }
@@ -82,7 +81,20 @@ class GameTypesController < ApplicationController
   end
 
   def refresh
-    GameType.create(:name => "super smash")
+    currentLoadedGames = GameType.all
+    game_name = []
+    currentLoadedGames.each do | game |
+      game_name << game.name
+    end
+
+    Dir.foreach('/Volumes/roms/') do |item|
+      next if item == '.' or item == '..'
+      Dir.foreach("/Volumes/roms/#{item}") do | rom |
+        next if rom.starts_with?('.')
+        next if game_name.include? rom
+        GameType.create(:name => File.basename(rom,File.extname(rom)).capitalize)
+      end
+    end
     render :nothing => true
   end
 end
