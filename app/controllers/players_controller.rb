@@ -1,4 +1,6 @@
 class PlayersController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
   # GET /players
   # GET /players.json
   def index
@@ -118,7 +120,7 @@ class PlayersController < ApplicationController
   private
 
   def sort_column
-    Product.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    Player.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
 
   def sort_direction

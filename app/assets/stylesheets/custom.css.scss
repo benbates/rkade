@@ -143,11 +143,11 @@ header {
 }
 
 .navbar-inverse .btn-navbar {
-  background-color: #31A4D9; 
+  background-color: #31A4D9;
   background-image: none;
   margin-top: 20px;
       &:hover {
-      background-color: #098AC6; 
+      background-color: #098AC6;
   }
 }
 
@@ -161,10 +161,10 @@ header {
     height: 60px;
     line-height: 60px;
     a {
-      margin-top: 30px; 
+      margin-top: 30px;
     }
         &:hover {
-      background-color: #098AC6; 
+      background-color: #098AC6;
     }
 }
 
@@ -181,10 +181,10 @@ header {
     height: 60px;
     line-height: 60px;
     a {
-      margin-top: 30px; 
+      margin-top: 30px;
     }
         &:hover {
-      background-color: #098AC6; 
+      background-color: #098AC6;
     }
 }
 
@@ -202,10 +202,10 @@ header {
     height: 60px;
     line-height: 60px;
     a {
-      margin-top: 30px; 
+      margin-top: 30px;
     }
     &:hover {
-      background-color: #098AC6; 
+      background-color: #098AC6;
     }
 }
 
@@ -237,12 +237,12 @@ footer {
   color: $grayLight;
   a {
     color: $gray;
-    &:hover { 
+    &:hover {
       color: $grayDarker;
     }
-  }  
-  small { 
-    float: left; 
+  }
+  small {
+    float: left;
   }
   ul {
     float: right;
@@ -258,5 +258,19 @@ footer {
  .ladder_icon {
   max-width:100%;
   height: 20px;
-  width: 20px;  
+  width: 20px;
+}
+
+.pretty th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.pretty th .asc {
+  background-image: url(/images/up_arrow.gif);
+}
+
+.pretty th .desc {
+  background-image: url(/images/down_arrow.gif);
 }
