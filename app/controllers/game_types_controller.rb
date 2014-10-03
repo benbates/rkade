@@ -80,4 +80,9 @@ class GameTypesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def refresh
+    GameType.create(:name => "super smash")
+    render :nothing => true
+  end
 end
